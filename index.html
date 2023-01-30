@@ -6,23 +6,21 @@
 </head>
 
 <body>
-    <ul>
-        <h1>Tarefas</h1>
-    <div class="tarefas">
-        <li>Estudar HTML</li>
-        <li>Estudar CSS</li>
-        <li>Estudar JS</li>
-    </div>
-    </ul>
-    <div class="dig">
+    <h1>Tarefas</h1>
+    <ul></ul>
     <input>
     <button onclick="add()"> Adicionar</button>
-    </div>
     <script>
+
+        // estado da aplicção 
+        const tarefas = ['Estudar HTM', 'Estudar CSS', 'Estudar JS']
+
+        // alteradores do estado da aplição 
         function add() {
             const ul = document.querySelector("ul")
             const input = document.querySelector("input")
             const tarefa = input.value
+            tarefas.push(tarefa)
 
             const li = document.createElement("li")
             li.innerText = tarefa 
