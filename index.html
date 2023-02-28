@@ -60,23 +60,34 @@
      <footer>
         <input>
         <button onclick="add()"> Adicionar</button>
+        <button onclick="limpar()">Limpar</button>
      </footer>
    
  
     <script>
 
         // estado da aplicção 
-        const tarefas = ['Estudar HTM', 'Estudar CSS', 'Estudar JS']
+        const tarefas = []
+        const input = document.querySelector("input")
+
 
         // alteradores do estado da aplição 
         function add() {
-            const input = document.querySelector("input")
+            
+            if(input.value == "") {
+                alert ("Insira a tarefa")
+            }
+
+            else{
+             const input = document.querySelector("input")
             const tarefa = input.value
             tarefas.push(tarefa)
             input.value = ""
             render()
+            }
+            
+            
         }
-        
         // mostrar estado na tela 
         function render() {
             const ul = document.querySelector("ul")
@@ -88,6 +99,11 @@
                 ul.appendChild(li)
             })
 
+        }
+        function limpar(){
+            tarefas.length = "0"
+            console.log("clear")
+            render()
         }
         // iniciar 
         render()
